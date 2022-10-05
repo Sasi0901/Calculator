@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        td{
+            padding: 50px;
+            margin: 50px;
+        }
+        input{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: auto;
+            margin: auto;
+        }
+        .but{
+            font-size: x-large;
+            background-color:rgb(204, 198, 198);
+        }
+        #click{
+            width: 50px;
+        }
+        .calc{
+            position: absolute;
+            top: 200px;
+            left:750px;
+            background-color:rgb(237, 239, 241);
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="calc.css">
+<body style="background-color:azure">
+    <p style="text-align:center; font-size: 55px ;"><b><u>CALCULATOR</u></b></p>
+    <script>
+        //function for displaying values
+        function dis(val)
+        {
+        document.getElementById("click").value+=val
+         }
+
+        function solve()
+        {
+        let x = document.getElementById("click").value
+        let y = eval(x)
+        document.getElementById("click").value = y
+        }
+
+        function clr()
+        {
+        document.getElementById("click").value = ""
+        }
+        </script>
+/
+<div class="calc">
+<table >
+<tr>
+    <input type="button" value="c" class="but" onclick="clr()"/> &nbsp;&nbsp;
+    <input style="background-color:red;width: 265px; height:100px; border-radius: 15%; font-size: x-large;" type="text" id="click"/>
+</tr>
+<br>
+<hr>
+<tr>
+<input type="button" value="+" class="but" onclick="dis('+')"/>
+<input type="button" value="1" class="but" onclick="dis('1')"/> 
+<input type="button" value="2" class="but" onclick="dis('2')"/> 
+<input type="button" value="3" class="but" onclick="dis('3')"/> 
+</tr>
+<br>
+<tr>
+<input type="button" value="-" class="but" onclick="dis('-')"/> 
+<input type="button" value="4" class="but" onclick="dis('4')"/> 
+<input type="button" value="5" class="but" onclick="dis('5')"/> 
+<input type="button" value="6" class="but" onclick="dis('6')"/> 
+</tr>
+<br>
+<tr>
+<input type="button" value="*" class="but" onclick="dis('*')"/> 
+<input type="button" value="7" class="but" onclick="dis('7')"/> 
+<input type="button" value="8" class="but" onclick="dis('8')"/> 
+<input type="button" value="9" class="but" onclick="dis('9')"/> 
+</tr>
+<br>
+<tr>
+<input type="button" value="/" class="but" onclick="dis('/')"/> 
+<input type="button" value="." class="but" onclick="dis('.')"/> 
+<input type="button" value="0" class="but" onclick="dis('0')"/> 
+<input style="background-color:red" type="button" value="=" class="but" onclick="solve()"/> 
+</tr>
+</table>
+</div>
+</body>
+</html>
